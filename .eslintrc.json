@@ -23,6 +23,8 @@
     // is used to prevent the use of variables or functions before they are defined within the same scope
     "no-use-before-define": ["error", { "variables": false }],
 
-    "import/extensions": ["error", "never"]
+    "import/extensions": ["error", "never"],
+
+    "no-unused-vars": "off"
   }
 }

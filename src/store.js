@@ -1,15 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { pokemonApi } from './services/nilam-api';
+import tokenReducer from './features/tokenSlice';
+import { inabApi } from './services/api/inab';
 
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
-    [pokemonApi.reducerPath]: pokemonApi.reducer,
+    // [inabApi.reducerPath]: inabApi.reducer,
+    // token: tokenReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(pokemonApi.middleware),
+  //   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(inabApi.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors

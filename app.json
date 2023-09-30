@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "play",
-    "slug": "play",
+    "name": "inab",
+    "slug": "inab-app",
+    "owner": "inab",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

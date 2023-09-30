@@ -9,8 +9,7 @@ export const store = configureStore({
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pokemonApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(pokemonApi.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
@@ -18,6 +17,6 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export var RootState = store.getState;
+export const RootState = store.getState;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export var AppDispatch = store.dispatch;
+export const AppDispatch = store.dispatch;

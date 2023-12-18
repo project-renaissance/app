@@ -13,7 +13,7 @@ function TestScreen({ navigation }) {
         <Text>Click to Open Home Screen</Text>
       </TouchableOpacity>
       {/* eslint-disable-next-line react/style-prop-object */}
-      <StatusBar style="auto" />
+      <StatusBar />
     </SafeAreaView>
   );
 }

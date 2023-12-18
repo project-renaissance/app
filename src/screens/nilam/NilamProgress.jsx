@@ -5,26 +5,22 @@ import React from 'react';
 import { Button, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-function HomeScreen({ navigation }) {
+function NilamProgress({ navigation }) {
   return (
     <SafeAreaView
       style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}
     >
-      <Button
-        className="py-4 text-red-600 bg-slate-900"
-        onPress={() => navigation.navigate('Login')}
-        title="Go to Login Page"
-      />
+      <Text>Nilam Progress</Text>
 
       <StatusBar />
     </SafeAreaView>
   );
 }
 
-HomeScreen.propTypes = {
+NilamProgress.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
   }).isRequired,
 };
 
-export default HomeScreen;
+export default NilamProgress;

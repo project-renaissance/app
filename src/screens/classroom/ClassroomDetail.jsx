@@ -4,9 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import PropTypes from 'prop-types';
 
 import React from 'react';
+import Icon from '@expo/vector-icons/Ionicons';
 import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Icon from '@expo/vector-icons/Ionicons';
 
 function ClassroomDetail({ navigation }) {
   return (

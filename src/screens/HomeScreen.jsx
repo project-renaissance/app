@@ -18,12 +18,6 @@ function HomeScreen({ navigation }) {
           <Text className="text-center text-white">Join Classroom</Text>
         </TouchableOpacity>
       </View>
-      {/* <Button
-        className="py-4 text-red-600 bg-slate-900"
-        onPress={() => navigation.navigate('Login')}
-        title="Go to Login Page"
-      /> */}
-
       <StatusBar />
     </SafeAreaView>
   );

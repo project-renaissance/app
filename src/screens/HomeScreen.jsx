@@ -1,25 +1,137 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import PropTypes from 'prop-types';
 
 import React from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Circle } from 'react-native-svg';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import InabText from '../components/InabText';
 
 function HomeScreen({ navigation }) {
-  return (
-    <SafeAreaView className="bg-slate-200">
-      <View className="p-5 mx-[28px] rounded-lg bg-slate-400" style={styles.boxShadow}>
-        <Text>You have not join any classroom yet.</Text>
+  // this.circularProgress.animate(100, 8000, Easing.quad);
 
-        <TouchableOpacity
-          onPress={() => navigation.navigate('ClassroomCode')}
-          className="w-full py-3 mt-4 bg-red-700 rounded-lg"
+  return (
+    // <SafeAreaView className="w-full h-full bg-slate-100">
+    <LinearGradient
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      className="h-full pt-[28px]"
+      colors={['#0F0F0F', '#262C38', '#232D3F']}
+    >
+      <ScrollView>
+        {/* Classroom Content */}
+        <View className="p-5 mx-[28px] rounded-lg bg-[#3D3D3D]" style={styles.boxShadow}>
+          <InabText>You have not join any classroom yet.</InabText>
+
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            className="w-full py-3 mt-4 rounded-lg"
+            colors={['#0F0F0F', '#232D3F']}
+          >
+            <InabText alignText="center">Join Classroom</InabText>
+          </LinearGradient>
+
+          {/* <TouchableOpacity
+            onPress={() => navigation.navigate('ClassroomCode')}
+            className="w-full py-3 mt-4 rounded-lg bg-[#BEADFA]"
+          >
+            <Text className="font-semibold text-center text-black">Join Classroom</Text>
+          </TouchableOpacity> */}
+        </View>
+
+        {/* NILAM Content */}
+        <View className="p-5 mx-[28px] mt-[20px] rounded-lg bg-[#3D3D3D]" style={styles.boxShadow}>
+          <View className="flex flex-col items-center justify-center">
+            <InabText>Your current NILAM count</InabText>
+            <AnimatedCircularProgress
+              size={200}
+              width={15}
+              backgroundWidth={10}
+              fill={70}
+              tintColor="#00ff00"
+              tintColorSecondary="#ff0000"
+              backgroundColor="#3d5875"
+              arcSweepAngle={240}
+              rotation={240}
+              lineCap="round"
+              style={{
+                marginTop: 18,
+              }}
+            >
+              {(fill) => (
+                <View className="flex flex-row items-baseline justify-center">
+                  <InabText size={36} weight="700">
+                    120
+                  </InabText>
+                  <InabText size={15} weight="700">
+                    /200
+                  </InabText>
+                </View>
+              )}
+            </AnimatedCircularProgress>
+            <InabText size={12} alignText="center">
+              Keep it up! 80 more NILAM records and you will receive 2 stars!
+            </InabText>
+          </View>
+
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            className="w-full py-3 mt-4 rounded-lg"
+            colors={['#0F0F0F', '#232D3F']}
+          >
+            <InabText alignText="center">Add Nilam Record</InabText>
+          </LinearGradient>
+
+          {/* <TouchableOpacity
+            onPress={() => navigation.navigate('Main', { screen: 'Nilam' })}
+            className="w-full py-3 mt-4 rounded-lg bg-[#BEADFA]"
+          >
+            <Text className="font-semibold text-center text-black">Add Nilam Record</Text>
+          </TouchableOpacity> */}
+        </View>
+
+        {/* Borrow Book Content */}
+        <View
+          className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-[#3D3D3D]"
+          style={styles.boxShadow}
         >
-          <Text className="text-center text-white">Join Classroom</Text>
-        </TouchableOpacity>
-      </View>
-      <StatusBar />
-    </SafeAreaView>
+          <InabText>Current Borrow Book:</InabText>
+          <View className="flex flex-row items-center w-full gap-5 mt-0">
+            <Image
+              style={{
+                height: 90,
+                width: 60,
+              }}
+              source={{
+                uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1667708346i/43641.jpg',
+              }}
+            />
+            <View className="flex flex-col items-start justify-between" style={{ flex: 1 }}>
+              <InabText size={18} weight="700">
+                Water for Elephants: Deez Nuts
+              </InabText>
+              <View className="flex flex-row gap-[16px]">
+                <View className="">
+                  <InabText size={12}>Borrow Date:</InabText>
+                  <InabText>19/12/2023</InabText>
+                </View>
+                <View className="">
+                  <InabText size={12}>Return Date:</InabText>
+                  <InabText>30/12/2023</InabText>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <StatusBar />
+      </ScrollView>
+    </LinearGradient>
+    // </SafeAreaView>
   );
 }
 

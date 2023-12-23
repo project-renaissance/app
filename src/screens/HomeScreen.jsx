@@ -11,42 +11,27 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import InabText from '../components/InabText';
 
 function HomeScreen({ navigation }) {
-  // this.circularProgress.animate(100, 8000, Easing.quad);
-
   return (
-    // <SafeAreaView className="w-full h-full bg-slate-100">
-    <LinearGradient
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
-      className="h-full pt-[28px]"
-      colors={['#0F0F0F', '#262C38', '#232D3F']}
-    >
+    <SafeAreaView className="w-full h-full bg-[#f0dfd5]">
       <ScrollView>
         {/* Classroom Content */}
-        <View className="p-5 mx-[28px] rounded-lg bg-[#3D3D3D]" style={styles.boxShadow}>
-          <InabText>You have not join any classroom yet.</InabText>
+        <View className="p-5 mx-[28px] rounded-lg bg-[#faeaff]" style={styles.boxShadow}>
+          <InabText fontColor="#000">You have not join any classroom yet.</InabText>
 
           <LinearGradient
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={['#0F0F0F', '#232D3F']}
+            colors={['#451952', '#662549']}
           >
             <InabText alignText="center">Join Classroom</InabText>
           </LinearGradient>
-
-          {/* <TouchableOpacity
-            onPress={() => navigation.navigate('ClassroomCode')}
-            className="w-full py-3 mt-4 rounded-lg bg-[#BEADFA]"
-          >
-            <Text className="font-semibold text-center text-black">Join Classroom</Text>
-          </TouchableOpacity> */}
         </View>
 
         {/* NILAM Content */}
-        <View className="p-5 mx-[28px] mt-[20px] rounded-lg bg-[#3D3D3D]" style={styles.boxShadow}>
+        <View className="p-5 mx-[28px] mt-[20px] rounded-lg bg-[#faeaff]" style={styles.boxShadow}>
           <View className="flex flex-col items-center justify-center">
-            <InabText>Your current NILAM count</InabText>
+            <InabText fontColor="#000">Your current NILAM count</InabText>
             <AnimatedCircularProgress
               size={200}
               width={15}
@@ -64,16 +49,16 @@ function HomeScreen({ navigation }) {
             >
               {(fill) => (
                 <View className="flex flex-row items-baseline justify-center">
-                  <InabText size={36} weight="700">
+                  <InabText fontColor="#000" size={36} weight="700">
                     120
                   </InabText>
-                  <InabText size={15} weight="700">
+                  <InabText fontColor="#000" size={15} weight="700">
                     /200
                   </InabText>
                 </View>
               )}
             </AnimatedCircularProgress>
-            <InabText size={12} alignText="center">
+            <InabText fontColor="#000" size={12} alignText="center">
               Keep it up! 80 more NILAM records and you will receive 2 stars!
             </InabText>
           </View>
@@ -82,25 +67,18 @@ function HomeScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={['#0F0F0F', '#232D3F']}
+            colors={['#451952', '#662549']}
           >
             <InabText alignText="center">Add Nilam Record</InabText>
           </LinearGradient>
-
-          {/* <TouchableOpacity
-            onPress={() => navigation.navigate('Main', { screen: 'Nilam' })}
-            className="w-full py-3 mt-4 rounded-lg bg-[#BEADFA]"
-          >
-            <Text className="font-semibold text-center text-black">Add Nilam Record</Text>
-          </TouchableOpacity> */}
         </View>
 
         {/* Borrow Book Content */}
         <View
-          className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-[#3D3D3D]"
+          className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-[#faeaff]"
           style={styles.boxShadow}
         >
-          <InabText>Current Borrow Book:</InabText>
+          <InabText fontColor="#000">Current Borrow Book:</InabText>
           <View className="flex flex-row items-center w-full gap-5 mt-0">
             <Image
               style={{
@@ -112,17 +90,21 @@ function HomeScreen({ navigation }) {
               }}
             />
             <View className="flex flex-col items-start justify-between" style={{ flex: 1 }}>
-              <InabText size={18} weight="700">
+              <InabText fontColor="#000" size={18} weight="700">
                 Water for Elephants: Deez Nuts
               </InabText>
               <View className="flex flex-row gap-[16px]">
                 <View className="">
-                  <InabText size={12}>Borrow Date:</InabText>
-                  <InabText>19/12/2023</InabText>
+                  <InabText fontColor="#000" size={12}>
+                    Borrow Date:
+                  </InabText>
+                  <InabText fontColor="#000">19/12/2023</InabText>
                 </View>
                 <View className="">
-                  <InabText size={12}>Return Date:</InabText>
-                  <InabText>30/12/2023</InabText>
+                  <InabText fontColor="#000" size={12}>
+                    Return Date:
+                  </InabText>
+                  <InabText fontColor="#000">30/12/2023</InabText>
                 </View>
               </View>
             </View>
@@ -130,8 +112,7 @@ function HomeScreen({ navigation }) {
         </View>
         <StatusBar />
       </ScrollView>
-    </LinearGradient>
-    // </SafeAreaView>
+    </SafeAreaView>
   );
 }
 

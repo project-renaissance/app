@@ -18,12 +18,12 @@ function MainBottomTabNavigation() {
     <Tab.Navigator
       style={styles.tabStyle}
       screenOptions={() => ({
-        tabBarInactiveTintColor: '#93B1A6',
+        tabBarInactiveTintColor: '#AE445A',
         tabBarActiveTintColor: 'white',
         tabBarStyle: {
           position: 'absolute',
           bottom: 0,
-          backgroundColor: '#040D12',
+          backgroundColor: '#451952',
           borderTopRightRadius: 20,
           borderTopLeftRadius: 20,
           borderTopWidth: 0,
@@ -45,7 +45,7 @@ function MainBottomTabNavigation() {
             <MaterialCommunityIcons
               name="google-classroom"
               size={20}
-              color={focused ? 'white' : '#93B1A6'}
+              color={focused ? 'white' : '#AE445A'}
             />
           ),
         }}
@@ -58,7 +58,7 @@ function MainBottomTabNavigation() {
             <Ionicons
               name="document-text-outline"
               size={20}
-              color={focused ? 'white' : '#93B1A6'}
+              color={focused ? 'white' : '#AE445A'}
             />
           ),
         }}
@@ -68,7 +68,7 @@ function MainBottomTabNavigation() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="home-outline" size={20} color={focused ? 'white' : '#93B1A6'} />
+            <Ionicons name="home-outline" size={20} color={focused ? 'white' : '#AE445A'} />
           ),
         }}
       />
@@ -77,7 +77,7 @@ function MainBottomTabNavigation() {
         component={BookList}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="book-outline" size={20} color={focused ? 'white' : '#93B1A6'} />
+            <Ionicons name="book-outline" size={20} color={focused ? 'white' : '#AE445A'} />
           ),
         }}
       />
@@ -86,7 +86,7 @@ function MainBottomTabNavigation() {
         component={Profile}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="person-outline" size={20} color={focused ? 'white' : '#93B1A6'} />
+            <Ionicons name="person-outline" size={20} color={focused ? 'white' : '#AE445A'} />
           ),
         }}
       />

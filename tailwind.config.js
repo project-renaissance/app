@@ -13,13 +13,13 @@ module.exports = {
         DEFAULT: '#800000',
         dark: '#4D0F0F',
       },
-      gold: {
-        DEFAULT: '#fce48d',
+      tiger: {
+        lighter: '#f0dfd5',
+        light: '#d9c7bd',
       },
       violet: {
-        lighter: '#B5B0FF',
-        light: '#7870E6',
-        DEFAULT: '#130B80',
+        light: '#faeaff',
+        DEFAULT: '#451952',
         dark: '#1A164D',
       },
     },

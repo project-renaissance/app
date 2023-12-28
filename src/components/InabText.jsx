@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { PropTypes } from 'prop-types';
 
-function InabText({ children, fontColor, size, weight, alignText }) {
+function InabText({ children, fontColor, size, weight, alignText, transform }) {
   const styles = StyleSheet.create({
     text: {
       color: fontColor,
@@ -13,6 +13,7 @@ function InabText({ children, fontColor, size, weight, alignText }) {
       fontWeight: weight,
       fontFamily: 'Poppins-Regular',
       textAlign: alignText,
+      textTransform: transform,
     },
   });
   return (
@@ -30,6 +31,7 @@ InabText.propTypes = {
   weight: PropTypes.string,
   alignText: PropTypes.string,
   children: PropTypes.node.isRequired,
+  transform: PropTypes.string,
 };
 
 InabText.defaultProps = {
@@ -37,6 +39,7 @@ InabText.defaultProps = {
   size: 14,
   weight: '600',
   alignText: 'left',
+  transform: 'none',
 };
 
 export default InabText;

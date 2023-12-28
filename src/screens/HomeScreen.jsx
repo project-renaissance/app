@@ -12,10 +12,10 @@ import InabText from '../components/InabText';
 
 function HomeScreen({ navigation }) {
   return (
-    <SafeAreaView className="w-full h-full bg-[#f0dfd5]">
+    <SafeAreaView className="w-full h-full bg-tiger-lighter">
       <ScrollView>
         {/* Classroom Content */}
-        <View className="p-5 mx-[28px] rounded-lg bg-[#faeaff]" style={styles.boxShadow}>
+        <View className="p-5 mx-[28px] rounded-lg bg-violet-light" style={styles.boxShadow}>
           <InabText fontColor="#000">You have not join any classroom yet.</InabText>
 
           <LinearGradient
@@ -24,12 +24,17 @@ function HomeScreen({ navigation }) {
             className="w-full py-3 mt-4 rounded-lg"
             colors={['#451952', '#662549']}
           >
-            <InabText alignText="center">Join Classroom</InabText>
+            <TouchableOpacity onPress={() => navigation.navigate('ClassroomCode')}>
+              <InabText alignText="center">Join Classroom</InabText>
+            </TouchableOpacity>
           </LinearGradient>
         </View>
 
         {/* NILAM Content */}
-        <View className="p-5 mx-[28px] mt-[20px] rounded-lg bg-[#faeaff]" style={styles.boxShadow}>
+        <View
+          className="p-5 mx-[28px] mt-[20px] rounded-lg bg-violet-light"
+          style={styles.boxShadow}
+        >
           <View className="flex flex-col items-center justify-center">
             <InabText fontColor="#000">Your current NILAM count</InabText>
             <AnimatedCircularProgress
@@ -75,7 +80,7 @@ function HomeScreen({ navigation }) {
 
         {/* Borrow Book Content */}
         <View
-          className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-[#faeaff]"
+          className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-violet-light"
           style={styles.boxShadow}
         >
           <InabText fontColor="#000">Current Borrow Book:</InabText>

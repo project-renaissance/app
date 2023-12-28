@@ -13,36 +13,51 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
+import InabText from '../../components/InabText';
 
 function ForgotPasswordScreen({ navigation }) {
   return (
     <SafeAreaView>
-      <View className="relative h-full bg-yellow-50">
-        <View className="p-6 bg-yellow-400 rounded-b-[20px] sticky top-0">
+      <View className="relative h-full bg-violet-light">
+        <LinearGradient
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          className="p-6 rounded-b-[20px] "
+          colors={['#451952', '#662549']}
+        >
           <View className="flex flex-col items-center justify-center w-full">
             <Image
               className="w-[150px] h-[150px] rounded-full mb-8"
               source={require('../../../assets/logo.png')}
             />
-            <Text className="text-xl font-semibold text-slate-700">Forgot Password</Text>
+            <InabText weight="700" size={20} fontColor="white">
+              Forgot Password
+            </InabText>
           </View>
-        </View>
+        </LinearGradient>
         <View className="p-[50px]">
-          <Text className="font-semibold text-slate-700">
+          <InabText weight="700" fontColor="#475569" className="font-semibold text-slate-700">
             Please enter the correct email address, so that we can reset your password.
-          </Text>
+          </InabText>
 
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700"
+            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
             placeholder="Email"
           />
 
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Login')}
-            className="w-full py-3 my-5 bg-red-700 rounded-lg"
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            className="w-full py-3 my-4 rounded-lg"
+            colors={['#451952', '#662549']}
           >
-            <Text className="text-center text-white">Submit</Text>
-          </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <InabText alignText="center" transform="uppercase" weight="700">
+                Submit
+              </InabText>
+            </TouchableOpacity>
+          </LinearGradient>
         </View>
       </View>
     </SafeAreaView>

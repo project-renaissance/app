@@ -7,6 +7,7 @@ import React from 'react';
 import Icon from '@expo/vector-icons/Ionicons';
 import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import InabText from '../../components/InabText';
 
 function ClassroomDetail({ navigation }) {
   return (
@@ -24,20 +25,22 @@ function ClassroomDetail({ navigation }) {
       </View>
 
       <View className="m-[28px] rounded-lg p-5 bg-yellow-300 flex flex-col justify-center items-center">
-        <Text className="text-xs">Teacher's Classroom</Text>
-        <Text className="text-lg font-semibold">Pn. Samsul</Text>
+        <InabText size={12}>Teacher's Classroom</InabText>
+        <InabText size={18} weight="700">
+          Pn. Samsul
+        </InabText>
       </View>
       <View className="m-[28px] mt-0 rounded-lg p-5 bg-yellow-300 flex flex-col justify-center items-center">
-        <Text className="text-xs">Student List</Text>
+        <InabText size={12}>Student List</InabText>
         <View className="w-full ">
           <View className="flex items-center justify-center py-3 my-2 bg-slate-200 rounded-xl">
-            <Text className="font-semibold">Fana</Text>
+            <InabText weight="700">Fana</InabText>
           </View>
           <View className="flex items-center justify-center py-3 my-2 bg-slate-200 rounded-xl">
-            <Text className="font-semibold">Shameer</Text>
+            <InabText weight="700">Shameer</InabText>
           </View>
           <View className="flex items-center justify-center py-3 my-2 bg-slate-200 rounded-xl">
-            <Text className="font-semibold">Bok</Text>
+            <InabText weight="700">Bok</InabText>
           </View>
         </View>
       </View>

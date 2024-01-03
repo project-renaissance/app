@@ -18,6 +18,7 @@ function MainBottomTabNavigation() {
     <Tab.Navigator
       style={styles.tabStyle}
       screenOptions={() => ({
+        headerShown: false,
         tabBarInactiveTintColor: '#AE445A',
         tabBarActiveTintColor: 'white',
         tabBarStyle: {

@@ -38,31 +38,31 @@ function RegisterScreen({ navigation }) {
         </LinearGradient>
         <View className="p-[50px]">
           <TextInput
-            className="w-full p-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Full Name"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Username"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Email"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Password"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Confirm Password"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Password"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Confirm Password"
           />
 

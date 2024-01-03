@@ -16,14 +16,15 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import InabText from '../../components/InabText';
+import style from '../../style';
 
 function Profile({ navigation }) {
   return (
     <SafeAreaView className="h-full bg-tiger-lighter">
       <ScrollView>
         <View
-          className="flex items-center justify-center p-5 mx-auto bg-white rounded-2xl"
-          style={styles.boxShadow}
+          className="flex items-center justify-center p-5 mx-auto bg-[#fff] rounded-2xl"
+          style={style.boxShadow}
         >
           <Image
             source={require('../../../assets/default_pic.png')}
@@ -34,7 +35,7 @@ function Profile({ navigation }) {
           />
         </View>
 
-        <View className="bg-violet-light p-7 m-[28px] mb-0 rounded-xl" style={styles.boxShadow}>
+        <View className="bg-violet-light p-7 m-[28px] mb-0 rounded-xl" style={style.boxShadow}>
           <View className="mb-4 border-b-2 border-violet">
             <InabText fontColor="black" size={15}>
               Personal Information
@@ -58,7 +59,7 @@ function Profile({ navigation }) {
           </View>
         </View>
 
-        <View className="bg-violet-light p-8 m-[28px] rounded-xl" style={styles.boxShadow}>
+        <View className="bg-violet-light p-8 m-[28px] rounded-xl" style={style.boxShadow}>
           <View className="mb-4 border-b-2 border-violet">
             <InabText fontColor="black" size={15}>
               Classroom Information
@@ -84,7 +85,7 @@ function Profile({ navigation }) {
 
         <View
           className="p-4 uppercase m-[28px] mt-0 bg-maroon flex flex-row items-center justify-center rounded-xl mb-[90px]"
-          style={styles.boxShadow}
+          style={style.boxShadow}
         >
           <MaterialIcons name="logout" color="white" size={20} style={{ marginEnd: 8 }} />
           <InabText fontColor="white" weight="700">
@@ -103,18 +104,5 @@ Profile.propTypes = {
     navigate: PropTypes.func.isRequired,
   }).isRequired,
 };
-
-const styles = StyleSheet.create({
-  boxShadow: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 8,
-    },
-    shadowOpacity: 0.8,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-});
 
 export default Profile;

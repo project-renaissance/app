@@ -2,13 +2,32 @@
 import { StatusBar } from 'expo-status-bar';
 import PropTypes from 'prop-types';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, ImageBackground, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
+import Animated, { SlideInDown, SlideInUp, SlideOutDown } from 'react-native-reanimated';
+import { State } from 'react-native-gesture-handler';
 import InabText from '../../components/InabText';
 
 function LoginScreen({ navigation }) {
+  const [togglePassword] = useState(true);
+
+  // const [loginForm] = useState(new Animated.Value(0));
+
+  // useEffect(() => {
+  //   animateForm()
+  // });
+
+  // const animateForm = (state) => {
+  //   Animated.timing(loginForm, {
+  //     toValue: 1,
+  //     duration: 300,
+  //     easing: Easing.inOut(Easing.ease),
+  //     useNativeDriver: false
+  //   }).start();
+  // };
+
   return (
     <SafeAreaView>
       <ImageBackground
@@ -17,7 +36,7 @@ function LoginScreen({ navigation }) {
       >
         <View className="flex items-center justify-center p-[32px]">
           <Image
-            className="w-[150px] h-[150px] rounded-full mb-10"
+            className="w-[150px] h-[150px] mb-10 rounded-full"
             source={require('../../../assets/logo.png')}
           />
           <InabText
@@ -36,13 +55,20 @@ function LoginScreen({ navigation }) {
           </InabText>
         </View>
 
-        <View className="flex flex-col items-center justify-center p-[58px] bg-violet-light rounded-t-[20px] w-full absolute bottom-0">
+        {/* Login Form */}
+        <Animated.View
+          entering={SlideInDown}
+          exiting={SlideOutDown}
+          className="flex flex-col items-center justify-center p-[58px] bg-violet-light rounded-t-[20px] w-full absolute bottom-0 "
+        >
+          {/* <View className='flex flex-col items-center justify-center p-[58px] bg-violet-light rounded-t-[20px] w-full absolute bottom-0 '> */}
           <TextInput
-            className="w-full p-4 transition-all bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Email Address"
           />
           <TextInput
-            className="w-full p-4 mt-4 bg-white rounded-lg border-1 border-slate-700 focus:border focus:border-violet"
+            secureTextEntry={togglePassword}
+            className="w-full p-4 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Password"
           />
 
@@ -73,7 +99,8 @@ function LoginScreen({ navigation }) {
               No account yet? Register here!
             </InabText>
           </TouchableOpacity>
-        </View>
+          {/* </View> */}
+        </Animated.View>
       </ImageBackground>
     </SafeAreaView>
   );

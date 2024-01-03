@@ -9,13 +9,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Circle } from 'react-native-svg';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import InabText from '../components/InabText';
+import style from '../style';
 
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView className="w-full h-full bg-tiger-lighter">
       <ScrollView>
         {/* Classroom Content */}
-        <View className="p-5 mx-[28px] rounded-lg bg-violet-light" style={styles.boxShadow}>
+        <View className="p-5 mx-[28px] rounded-lg bg-violet-light" style={style.boxShadow}>
           <InabText fontColor="#000">You have not join any classroom yet.</InabText>
 
           <LinearGradient
@@ -33,7 +34,7 @@ function HomeScreen({ navigation }) {
         {/* NILAM Content */}
         <View
           className="p-5 mx-[28px] mt-[20px] rounded-lg bg-violet-light"
-          style={styles.boxShadow}
+          style={style.boxShadow}
         >
           <View className="flex flex-col items-center justify-center">
             <InabText fontColor="#000">Your current NILAM count</InabText>
@@ -81,7 +82,7 @@ function HomeScreen({ navigation }) {
         {/* Borrow Book Content */}
         <View
           className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-violet-light"
-          style={styles.boxShadow}
+          style={style.boxShadow}
         >
           <InabText fontColor="#000">Current Borrow Book:</InabText>
           <View className="flex flex-row items-center w-full gap-5 mt-0">
@@ -126,18 +127,5 @@ HomeScreen.propTypes = {
     navigate: PropTypes.func.isRequired,
   }).isRequired,
 };
-
-const styles = StyleSheet.create({
-  boxShadow: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 8,
-    },
-    shadowOpacity: 0.8,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-});
 
 export default HomeScreen;

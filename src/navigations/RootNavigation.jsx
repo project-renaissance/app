@@ -9,6 +9,7 @@ import RegisterScreen from '../screens/auth/RegisterScreen';
 import ForgotPasswordScreen from '../screens/auth/ForgotPasswordScreen';
 import ClassroomCode from '../screens/classroom/ClassroomCode';
 import ClassroomDetail from '../screens/classroom/ClassroomDetail';
+import BookDetail from '../screens/library/BookDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,10 +30,16 @@ function RootNavigation() {
           <Stack.Screen name="Register" component={RegisterScreen} />
           <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
         </Stack.Group>
+
         <Stack.Group>
           <Stack.Screen name="ClassroomCode" component={ClassroomCode} />
           <Stack.Screen name="ClassroomDetail" component={ClassroomDetail} />
         </Stack.Group>
+
+        <Stack.Group>
+          <Stack.Screen name="BookDetail" component={BookDetail} />
+        </Stack.Group>
+
         <Stack.Screen name="Main" component={MainBottomTabNavigation} />
       </Stack.Navigator>
     </NavigationContainer>

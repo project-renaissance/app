@@ -7,40 +7,70 @@ import React from 'react';
 import Icon from '@expo/vector-icons/Ionicons';
 import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 import InabText from '../../components/InabText';
+import style from '../../style';
 
 function ClassroomDetail({ navigation }) {
   return (
-    <SafeAreaView className="h-full bg-slate-200">
-      <View className="p-5 rounded-b-[20px] bg-yellow-400">
+    <SafeAreaView className="h-full bg-tiger-lighter">
+      <LinearGradient
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        className="w-full p-5 rounded-b-[20px] h-[30%]"
+        colors={['#451952', '#662549']}
+      >
         <View className="flex flex-col items-start justify-center">
           <View className="flex flex-row items-center justify-center gap-1 mb-4">
             <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" size={28} />
+              <Icon color="white" name="arrow-back" size={28} />
             </TouchableOpacity>
-            <Text className="text-xl font-bold">Classroom Detail</Text>
+            <InabText weight="bold" size={20}>
+              Classroom Detail
+            </InabText>
           </View>
-          <Text className="w-full my-3 text-3xl font-semibold text-center">5 Nilam</Text>
+          <View className="w-full my-3">
+            <InabText weight="bold" size={30} alignText="center">
+              5 Nilam
+            </InabText>
+          </View>
         </View>
-      </View>
 
-      <View className="m-[28px] rounded-lg p-5 bg-yellow-300 flex flex-col justify-center items-center">
-        <InabText size={12}>Teacher's Classroom</InabText>
-        <InabText size={18} weight="700">
-          Pn. Samsul
+        <View
+          className="my-[28px] rounded-lg p-5 bg-violet-light flex flex-col justify-center items-center"
+          style={style.boxShadow}
+        >
+          <InabText fontColor="black" size={12}>
+            Teacher's Classroom
+          </InabText>
+          <InabText fontColor="black" size={18} weight="700">
+            Pn. Samsul
+          </InabText>
+        </View>
+      </LinearGradient>
+
+      <View
+        className="mx-[20px] mt-[40px] rounded-lg p-5 bg-violet-light flex flex-col justify-center items-center"
+        style={style.boxShadow}
+      >
+        <InabText fontColor="black" size={12}>
+          Student List
         </InabText>
-      </View>
-      <View className="m-[28px] mt-0 rounded-lg p-5 bg-yellow-300 flex flex-col justify-center items-center">
-        <InabText size={12}>Student List</InabText>
         <View className="w-full ">
-          <View className="flex items-center justify-center py-3 my-2 bg-slate-200 rounded-xl">
-            <InabText weight="700">Fana</InabText>
+          <View className="flex items-center justify-center py-3 my-2 bg-violet rounded-xl">
+            <InabText fontColor="white" weight="700">
+              Fana
+            </InabText>
           </View>
-          <View className="flex items-center justify-center py-3 my-2 bg-slate-200 rounded-xl">
-            <InabText weight="700">Shameer</InabText>
+          <View className="flex items-center justify-center py-3 my-2 bg-violet rounded-xl">
+            <InabText fontColor="white" weight="700">
+              Shameer
+            </InabText>
           </View>
-          <View className="flex items-center justify-center py-3 my-2 bg-slate-200 rounded-xl">
-            <InabText weight="700">Bok</InabText>
+          <View className="flex items-center justify-center py-3 my-2 bg-violet rounded-xl">
+            <InabText fontColor="white" weight="700">
+              Bok
+            </InabText>
           </View>
         </View>
       </View>

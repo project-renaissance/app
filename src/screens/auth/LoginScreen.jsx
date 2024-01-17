@@ -8,25 +8,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { SlideInDown, SlideInUp, SlideOutDown } from 'react-native-reanimated';
 import { State } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
 import InabText from '../../components/InabText';
 
 function LoginScreen({ navigation }) {
-  const [togglePassword] = useState(true);
+  const [togglePassword, setTogglePassword] = useState(true);
 
-  // const [loginForm] = useState(new Animated.Value(0));
-
-  // useEffect(() => {
-  //   animateForm()
-  // });
-
-  // const animateForm = (state) => {
-  //   Animated.timing(loginForm, {
-  //     toValue: 1,
-  //     duration: 300,
-  //     easing: Easing.inOut(Easing.ease),
-  //     useNativeDriver: false
-  //   }).start();
-  // };
+  const onTogglePassword = () => {
+    setTogglePassword(!togglePassword);
+  };
 
   return (
     <SafeAreaView>
@@ -34,18 +24,19 @@ function LoginScreen({ navigation }) {
         className="relative flex flex-col flex-wrap h-full bg-slate-600"
         source={require('../../../assets/bg_two.jpeg')}
       >
-        <View className="flex items-center justify-center p-[32px]">
+        <View className="flex flex-col items-center justify-center p-[32px] w-full">
           <Image
             className="w-[150px] h-[150px] mb-10 rounded-full"
             source={require('../../../assets/logo.png')}
           />
-          <InabText
+          {/* <InabText
+            alignText="center"
             size={24}
             weight="700"
             className="text-2xl font-semibold text-center text-white"
           >
             Hello there, welcome back!
-          </InabText>
+          </InabText> */}
           <InabText
             size={20}
             weight="700"
@@ -61,16 +52,23 @@ function LoginScreen({ navigation }) {
           exiting={SlideOutDown}
           className="flex flex-col items-center justify-center p-[58px] bg-violet-light rounded-t-[20px] w-full absolute bottom-0 "
         >
-          {/* <View className='flex flex-col items-center justify-center p-[58px] bg-violet-light rounded-t-[20px] w-full absolute bottom-0 '> */}
           <TextInput
             className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
             placeholder="Email Address"
           />
-          <TextInput
-            secureTextEntry={togglePassword}
-            className="w-full p-4 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
-            placeholder="Password"
-          />
+          <View className="relative w-full">
+            <TextInput
+              secureTextEntry={togglePassword}
+              className="w-full p-4 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
+              placeholder="Password"
+            />
+            <TouchableOpacity
+              onPress={onTogglePassword}
+              className="absolute bottom-[15px] right-[15px]"
+            >
+              <Ionicons name={togglePassword ? 'eye' : 'eye-off'} size={28} />
+            </TouchableOpacity>
+          </View>
 
           <TouchableOpacity
             onPress={() => navigation.navigate('ForgotPassword')}

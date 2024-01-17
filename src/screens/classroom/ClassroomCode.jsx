@@ -22,8 +22,8 @@ function ClassroomCode({ navigation }) {
             <Text className="text-xl font-bold ">Classroom Code</Text>
           </View>
           <TextInput
-            className="w-full p-4 mb-4 bg-white rounded-lg border-1 border-slate-700"
-            placeholder="Email Address"
+            className="w-full p-4 mb-3 transition-all bg-white border rounded-lg border-violet border-1 focus:border-violet-dark"
+            placeholder="Enter Classroom Code"
           />
 
           <LinearGradient

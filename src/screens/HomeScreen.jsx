@@ -14,9 +14,9 @@ import style from '../style';
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView className="w-full h-full bg-tiger-lighter">
-      <ScrollView>
+      <ScrollView className="mt-4">
         {/* Classroom Content */}
-        <View className="p-5 mx-[28px] rounded-lg bg-violet-light" style={style.boxShadow}>
+        <View className="p-5 mx-[28px] rounded-lg bg-violet-light pt-3" style={style.boxShadow}>
           <InabText fontColor="#000">You have not join any classroom yet.</InabText>
 
           <LinearGradient

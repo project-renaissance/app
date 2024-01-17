@@ -21,7 +21,7 @@ import style from '../../style';
 function Profile({ navigation }) {
   return (
     <SafeAreaView className="h-full bg-tiger-lighter">
-      <ScrollView>
+      <ScrollView className="mt-8">
         <View
           className="flex items-center justify-center p-5 mx-auto bg-[#fff] rounded-2xl"
           style={style.boxShadow}
@@ -83,7 +83,8 @@ function Profile({ navigation }) {
           </View>
         </View>
 
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Login')}
           className="p-4 uppercase m-[28px] mt-0 bg-maroon flex flex-row items-center justify-center rounded-xl mb-[90px]"
           style={style.boxShadow}
         >
@@ -91,7 +92,7 @@ function Profile({ navigation }) {
           <InabText fontColor="white" weight="700">
             LOGOUT
           </InabText>
-        </View>
+        </TouchableOpacity>
 
         <StatusBar />
       </ScrollView>

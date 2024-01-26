@@ -14,6 +14,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import InabText from '../../components/InabText';
+import COLORS from '../../assets/colors';
 
 function RegisterScreen({ navigation }) {
   return (
@@ -23,7 +24,7 @@ function RegisterScreen({ navigation }) {
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           className="p-6 rounded-b-[20px] "
-          colors={['#451952', '#662549']}
+          colors={[COLORS.gradient_from, COLORS.gradient_from]}
         >
           <View className="flex flex-col items-center justify-center w-full">
             <Image
@@ -70,7 +71,7 @@ function RegisterScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 my-4 rounded-lg"
-            colors={['#451952', '#662549']}
+            colors={[COLORS.gradient_from, COLORS.gradient_from]}
           >
             <TouchableOpacity onPress={() => navigation.navigate('Main', { screen: 'Home' })}>
               <InabText alignText="center" transform="uppercase" weight="700">
@@ -80,7 +81,7 @@ function RegisterScreen({ navigation }) {
           </LinearGradient>
 
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <InabText weight="700" alignText="center" fontColor="#475569">
+            <InabText weight="700" alignText="center" fontColor={COLORS.gray_text}>
               Already got account? Login here!
             </InabText>
           </TouchableOpacity>

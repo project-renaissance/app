@@ -10,6 +10,7 @@ import BookList from '../screens/library/BookList';
 import Profile from '../screens/profile/Profile';
 import ClassroomNavigation from './ClassroomNavigation';
 import ClassroomList from '../screens/classroom/ClassroomList';
+import COLORS from '../assets/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,12 +20,12 @@ function MainBottomTabNavigation() {
       style={styles.tabStyle}
       screenOptions={() => ({
         headerShown: false,
-        tabBarInactiveTintColor: '#AE445A',
-        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: COLORS.tabBarFocus,
+        tabBarActiveTintColor: COLORS.white,
         tabBarStyle: {
           position: 'absolute',
           bottom: 0,
-          backgroundColor: '#451952',
+          backgroundColor: COLORS.tabBarBackground,
           borderTopRightRadius: 20,
           borderTopLeftRadius: 20,
           borderTopWidth: 0,
@@ -46,7 +47,7 @@ function MainBottomTabNavigation() {
             <MaterialCommunityIcons
               name="google-classroom"
               size={20}
-              color={focused ? 'white' : '#AE445A'}
+              color={focused ? COLORS.white : COLORS.tabBarFocus}
             />
           ),
         }}
@@ -59,7 +60,7 @@ function MainBottomTabNavigation() {
             <Ionicons
               name="document-text-outline"
               size={20}
-              color={focused ? 'white' : '#AE445A'}
+              color={focused ? COLORS.white : COLORS.tabBarFocus}
             />
           ),
         }}
@@ -69,7 +70,11 @@ function MainBottomTabNavigation() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="home-outline" size={20} color={focused ? 'white' : '#AE445A'} />
+            <Ionicons
+              name="home-outline"
+              size={20}
+              color={focused ? COLORS.white : COLORS.tabBarFocus}
+            />
           ),
         }}
       />
@@ -78,7 +83,11 @@ function MainBottomTabNavigation() {
         component={BookList}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="book-outline" size={20} color={focused ? 'white' : '#AE445A'} />
+            <Ionicons
+              name="book-outline"
+              size={20}
+              color={focused ? COLORS.white : COLORS.tabBarFocus}
+            />
           ),
         }}
       />
@@ -87,7 +96,11 @@ function MainBottomTabNavigation() {
         component={Profile}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="person-outline" size={20} color={focused ? 'white' : '#AE445A'} />
+            <Ionicons
+              name="person-outline"
+              size={20}
+              color={focused ? COLORS.white : COLORS.tabBarFocus}
+            />
           ),
         }}
       />

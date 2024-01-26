@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import InabText from '../../components/InabText';
 import globalStyle from '../../globalStyle';
 import InabFab from '../../components/InabFab';
+import COLORS from '../../assets/colors';
 
 function ClassroomList({ navigation }) {
   const centerFab = { icon: 'add', route: '', label: 'Create Class' };
@@ -19,7 +20,7 @@ function ClassroomList({ navigation }) {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         className="p-6 rounded-b-[20px] "
-        colors={['#451952', '#662549']}
+        colors={[COLORS.gradient_from, COLORS.gradient_from]}
       >
         <View className="flex flex-col items-center justify-center w-full">
           <InabText size={20} weight="700" fontColor="white">

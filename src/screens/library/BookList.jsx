@@ -16,6 +16,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import globalStyle from '../../globalStyle';
 import InabText from '../../components/InabText';
+import COLORS from '../../assets/colors';
 
 function BookList({ navigation }) {
   return (
@@ -45,7 +46,7 @@ function BookList({ navigation }) {
 
       <ScrollView style={{ flex: 1 }} className="mt-[40px] p-[16px] mb-[100px]">
         <View className="mb-[16px]">
-          <InabText fontColor="black" size={16} weight="700">
+          <InabText fontColor={COLORS.black} size={16} weight="700">
             Trending
           </InabText>
           <ScrollView
@@ -71,7 +72,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </TouchableOpacity>
@@ -87,7 +88,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -103,7 +104,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -119,7 +120,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -135,7 +136,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -151,7 +152,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -159,7 +160,7 @@ function BookList({ navigation }) {
         </View>
 
         <View className="mb-[16px]">
-          <InabText fontColor="black" size={16} weight="700">
+          <InabText fontColor={COLORS.black} size={16} weight="700">
             Trending
           </InabText>
           <ScrollView
@@ -182,7 +183,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -198,7 +199,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -214,7 +215,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -230,7 +231,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -246,7 +247,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -262,7 +263,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -270,7 +271,7 @@ function BookList({ navigation }) {
         </View>
 
         <View className="mb-[16px]">
-          <InabText fontColor="black" size={16} weight="700">
+          <InabText fontColor={COLORS.black} size={16} weight="700">
             Trending
           </InabText>
           <ScrollView
@@ -293,7 +294,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -309,7 +310,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -325,7 +326,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -341,7 +342,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -357,7 +358,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>
@@ -373,7 +374,7 @@ function BookList({ navigation }) {
                   uri: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456894457i/8933944.jpg',
                 }}
               />
-              <InabText fontColor="black" size={12} weight="600">
+              <InabText fontColor={COLORS.black} size={12} weight="600">
                 Harry Potter: The Prequel
               </InabText>
             </View>

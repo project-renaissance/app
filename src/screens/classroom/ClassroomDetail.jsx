@@ -10,6 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import InabText from '../../components/InabText';
 import globalStyle from '../../globalStyle';
+import COLORS from '../../assets/colors';
 
 function ClassroomDetail({ navigation }) {
   return (
@@ -18,7 +19,7 @@ function ClassroomDetail({ navigation }) {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         className="w-full p-5 rounded-b-[20px] h-[30%]"
-        colors={['#451952', '#662549']}
+        colors={[COLORS.gradient_from, COLORS.gradient_from]}
       >
         <View className="flex flex-col items-start justify-center">
           <View className="flex flex-row items-center justify-center gap-1 mb-4">

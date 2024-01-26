@@ -4,6 +4,7 @@
 import React, { useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { PropTypes } from 'prop-types';
+import COLORS from '../assets/colors';
 
 function InabText({ children, fontColor, size, weight, alignText, transform, cssStyle }) {
   const styles = StyleSheet.create({
@@ -36,7 +37,7 @@ InabText.propTypes = {
 };
 
 InabText.defaultProps = {
-  fontColor: '#fff',
+  fontColor: COLORS.white,
   size: 14,
   weight: '600',
   alignText: 'left',

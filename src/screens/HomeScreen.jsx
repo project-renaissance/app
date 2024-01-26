@@ -10,6 +10,7 @@ import { Circle } from 'react-native-svg';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import InabText from '../components/InabText';
 import globalStyle from '../globalStyle';
+import COLORS from '../assets/colors';
 
 function HomeScreen({ navigation }) {
   return (
@@ -26,7 +27,7 @@ function HomeScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={['#451952', '#662549']}
+            colors={[COLORS.gradient_from, COLORS.gradient_from]}
           >
             <TouchableOpacity onPress={() => navigation.navigate('ClassroomCode')}>
               <InabText alignText="center">Join Classroom</InabText>
@@ -46,9 +47,9 @@ function HomeScreen({ navigation }) {
               width={15}
               backgroundWidth={10}
               fill={70}
-              tintColor="#00ff00"
-              tintColorSecondary="#ff0000"
-              backgroundColor="#3d5875"
+              tintColor={COLORS.tintColorChart}
+              tintColorSecondary={COLORS.tintColorSecondaryChart}
+              backgroundColor={COLORS.backgroundColorChart}
               arcSweepAngle={240}
               rotation={240}
               lineCap="round"
@@ -76,7 +77,7 @@ function HomeScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={['#451952', '#662549']}
+            colors={[COLORS.gradient_from, COLORS.gradient_from]}
           >
             <InabText alignText="center">Add Nilam Record</InabText>
           </LinearGradient>

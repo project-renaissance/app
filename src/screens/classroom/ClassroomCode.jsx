@@ -9,6 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import InabText from '../../components/InabText';
 import globalStyle from '../../globalStyle';
+import COLORS from '../../assets/colors';
 
 function ClassroomCode({ navigation }) {
   return (
@@ -30,7 +31,7 @@ function ClassroomCode({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 my-4 rounded-lg"
-            colors={['#451952', '#662549']}
+            colors={[COLORS.gradient_from, COLORS.gradient_from]}
           >
             <TouchableOpacity onPress={() => navigation.navigate('ClassroomDetail')}>
               <InabText alignText="center" transform="uppercase" weight="700">

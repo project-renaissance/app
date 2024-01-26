@@ -21,6 +21,7 @@ import { SceneMap, TabView } from 'react-native-tab-view';
 import globalStyle from '../../globalStyle';
 import InabText from '../../components/InabText';
 import TabBar from '../../components/TabBar';
+import COLORS from '../../assets/colors';
 
 const renderScene = SceneMap({
   first: () => (
@@ -97,7 +98,7 @@ function BookDetail({ navigation }) {
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           className="w-full p-3 mt-4 rounded-lg"
-          colors={['#451952', '#662549']}
+          colors={[COLORS.gradient_from, COLORS.gradient_from]}
         >
           <InabText alignText="center">Borrow Book</InabText>
         </LinearGradient>

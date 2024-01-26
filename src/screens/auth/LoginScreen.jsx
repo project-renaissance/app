@@ -10,6 +10,7 @@ import Animated, { SlideInDown, SlideInUp, SlideOutDown } from 'react-native-rea
 import { State } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import InabText from '../../components/InabText';
+import COLORS from '../../assets/colors';
 
 function LoginScreen({ navigation }) {
   const [togglePassword, setTogglePassword] = useState(true);
@@ -29,14 +30,6 @@ function LoginScreen({ navigation }) {
             className="w-[150px] h-[150px] mb-10 rounded-full"
             source={require('../../../assets/logo.png')}
           />
-          {/* <InabText
-            alignText="center"
-            size={24}
-            weight="700"
-            className="text-2xl font-semibold text-center text-white"
-          >
-            Hello there, welcome back!
-          </InabText> */}
           <InabText
             size={20}
             weight="700"
@@ -74,7 +67,7 @@ function LoginScreen({ navigation }) {
             onPress={() => navigation.navigate('ForgotPassword')}
             className="w-full pt-[24px]"
           >
-            <InabText weight="700" alignText="right" fontColor="#475569">
+            <InabText weight="700" alignText="right" fontColor={COLORS.gray_text}>
               Forgot Password?
             </InabText>
           </TouchableOpacity>
@@ -83,7 +76,7 @@ function LoginScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={['#451952', '#662549']}
+            colors={[COLORS.gradient_from, COLORS.gradient_from]}
           >
             <TouchableOpacity onPress={() => navigation.navigate('Main', { screen: 'Home' })}>
               <InabText alignText="center" transform="uppercase" weight="700">
@@ -93,7 +86,7 @@ function LoginScreen({ navigation }) {
           </LinearGradient>
 
           <TouchableOpacity onPress={() => navigation.navigate('Register')} className="mt-4">
-            <InabText weight="700" fontColor="#475569">
+            <InabText weight="700" fontColor={COLORS.gray_text}>
               No account yet? Register here!
             </InabText>
           </TouchableOpacity>

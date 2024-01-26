@@ -13,6 +13,7 @@ import InabFab from '../../components/InabFab';
 import globalStyle from '../../globalStyle';
 import ListRecord from './history/ListRecord';
 import TabBar from '../../components/TabBar';
+import COLORS from '../../assets/colors';
 
 const renderScene = SceneMap({
   first: () => (
@@ -68,10 +69,10 @@ function NilamProgress({ navigation }) {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         className="p-6 rounded-b-[20px] "
-        colors={['#451952', '#662549']}
+        colors={[COLORS.gradient_from, COLORS.gradient_from]}
       >
         <View className="flex flex-col items-center justify-center w-full">
-          <InabText size={20} weight="700" fontColor="white">
+          <InabText size={20} weight="700" fontColor={COLORS.white}>
             NILAM Progress
           </InabText>
           <View className="flex flex-col items-center justify-center my-3">
@@ -84,7 +85,7 @@ function NilamProgress({ navigation }) {
             <InabText>Total Nilam Record</InabText>
             <InabText>2/10</InabText>
             <View className="mt-[8px]">
-              <Progress.Bar color="white" progress={0.1} width={200} />
+              <Progress.Bar color={COLORS.white} progress={0.1} width={200} />
             </View>
           </View>
         </View>

@@ -16,7 +16,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import InabText from '../../components/InabText';
-import style from '../../style';
+import globalStyle from '../../globalStyle';
 
 function Profile({ navigation }) {
   return (
@@ -24,7 +24,7 @@ function Profile({ navigation }) {
       <ScrollView className="mt-8">
         <View
           className="flex items-center justify-center p-5 mx-auto bg-[#fff] rounded-2xl"
-          style={style.boxShadow}
+          style={globalStyle.boxShadow}
         >
           <Image
             source={require('../../../assets/default_pic.png')}
@@ -35,7 +35,10 @@ function Profile({ navigation }) {
           />
         </View>
 
-        <View className="bg-violet-light p-7 m-[28px] mb-0 rounded-xl" style={style.boxShadow}>
+        <View
+          className="bg-violet-light p-7 m-[28px] mb-0 rounded-xl"
+          style={globalStyle.boxShadow}
+        >
           <View className="mb-4 border-b-2 border-violet">
             <InabText fontColor="black" size={15}>
               Personal Information
@@ -59,7 +62,7 @@ function Profile({ navigation }) {
           </View>
         </View>
 
-        <View className="bg-violet-light p-8 m-[28px] rounded-xl" style={style.boxShadow}>
+        <View className="bg-violet-light p-8 m-[28px] rounded-xl" style={globalStyle.boxShadow}>
           <View className="mb-4 border-b-2 border-violet">
             <InabText fontColor="black" size={15}>
               Classroom Information
@@ -86,7 +89,7 @@ function Profile({ navigation }) {
         <TouchableOpacity
           onPress={() => navigation.navigate('Login')}
           className="p-4 uppercase m-[28px] mt-0 bg-maroon flex flex-row items-center justify-center rounded-xl mb-[90px]"
-          style={style.boxShadow}
+          style={globalStyle.boxShadow}
         >
           <MaterialIcons name="logout" color="white" size={20} style={{ marginEnd: 8 }} />
           <InabText fontColor="white" weight="700">

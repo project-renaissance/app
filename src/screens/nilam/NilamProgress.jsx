@@ -9,8 +9,8 @@ import { FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-ico
 import { SceneMap, TabView } from 'react-native-tab-view';
 import * as Progress from 'react-native-progress';
 import InabText from '../../components/InabText';
-import NilamFab from '../../components/NilamFab';
-import style from '../../style';
+import InabFab from '../../components/InabFab';
+import globalStyle from '../../globalStyle';
 import ListRecord from './history/ListRecord';
 import TabBar from '../../components/TabBar';
 
@@ -55,6 +55,13 @@ function NilamProgress({ navigation }) {
     setIndex(newIndex);
   };
 
+  // fab array
+  const topButton = [{ id: 1, icon: 'qr-code-outline', route: '' }];
+
+  const sideButton = [{ id: 1, icon: 'document-text-outline', route: '' }];
+
+  const centerButton = { icon: 'add', isRotate: true };
+
   return (
     <SafeAreaView className="relative h-full pt-3 bg-tiger-lighter">
       <LinearGradient
@@ -65,7 +72,7 @@ function NilamProgress({ navigation }) {
       >
         <View className="flex flex-col items-center justify-center w-full">
           <InabText size={20} weight="700" fontColor="white">
-            NILAM Progress Test
+            NILAM Progress
           </InabText>
           <View className="flex flex-col items-center justify-center my-3">
             <InabText>Luqman Abd Latif</InabText>
@@ -98,7 +105,7 @@ function NilamProgress({ navigation }) {
       />
 
       <View className="absolute bottom-0 right-0">
-        <NilamFab />
+        <InabFab topListFab={topButton} sideListFab={sideButton} centerFab={centerButton} />
       </View>
     </SafeAreaView>
   );

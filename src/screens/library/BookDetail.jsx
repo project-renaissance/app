@@ -18,7 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SceneMap, TabView } from 'react-native-tab-view';
-import style from '../../style';
+import globalStyle from '../../globalStyle';
 import InabText from '../../components/InabText';
 import TabBar from '../../components/TabBar';
 

@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import style from '../../style';
+import globalStyle from '../../globalStyle';
 import InabText from '../../components/InabText';
 
 function BookList({ navigation }) {
@@ -31,7 +31,7 @@ function BookList({ navigation }) {
         {/* Search Input */}
         <View
           className="absolute bottom-[-30px] right-[5%] w-[90%] p-5 rounded-lg bg-violet-light"
-          style={style.boxShadow}
+          style={globalStyle.boxShadow}
         >
           <View className="flex flex-row items-center w-full p-1 border rounded-lg border-violet focus:border-violet-dark">
             <Ionicons size={20} name="search" />

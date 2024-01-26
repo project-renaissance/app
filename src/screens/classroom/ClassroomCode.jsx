@@ -8,12 +8,12 @@ import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'rea
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import InabText from '../../components/InabText';
-import style from '../../style';
+import globalStyle from '../../globalStyle';
 
 function ClassroomCode({ navigation }) {
   return (
     <SafeAreaView className="flex h-full bg-tiger-lighter ">
-      <View className="p-5 rounded-b-[20px] bg-violet-light" style={style.boxShadow}>
+      <View className="p-5 rounded-b-[20px] bg-violet-light" style={globalStyle.boxShadow}>
         <View className="flex flex-col items-start justify-center">
           <View className="flex flex-row items-center justify-center gap-1 mb-4">
             <TouchableOpacity onPress={() => navigation.goBack()}>

@@ -9,7 +9,7 @@ import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import InabText from '../../components/InabText';
-import style from '../../style';
+import globalStyle from '../../globalStyle';
 
 function ClassroomDetail({ navigation }) {
   return (
@@ -38,7 +38,7 @@ function ClassroomDetail({ navigation }) {
 
         <View
           className="my-[28px] rounded-lg p-5 bg-violet-light flex flex-col justify-center items-center"
-          style={style.boxShadow}
+          style={globalStyle.boxShadow}
         >
           <InabText fontColor="black" size={12}>
             Teacher's Classroom
@@ -51,7 +51,7 @@ function ClassroomDetail({ navigation }) {
 
       <View
         className="mx-[20px] mt-[40px] rounded-lg p-5 bg-violet-light flex flex-col justify-center items-center"
-        style={style.boxShadow}
+        style={globalStyle.boxShadow}
       >
         <InabText fontColor="black" size={12}>
           Student List

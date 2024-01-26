@@ -9,14 +9,17 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Circle } from 'react-native-svg';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import InabText from '../components/InabText';
-import style from '../style';
+import globalStyle from '../globalStyle';
 
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView className="w-full h-full bg-tiger-lighter">
       <ScrollView className="mt-4">
         {/* Classroom Content */}
-        <View className="p-5 mx-[28px] rounded-lg bg-violet-light pt-3" style={style.boxShadow}>
+        <View
+          className="p-5 mx-[28px] rounded-lg bg-violet-light pt-3"
+          style={globalStyle.boxShadow}
+        >
           <InabText fontColor="#000">You have not join any classroom yet.</InabText>
 
           <LinearGradient
@@ -34,7 +37,7 @@ function HomeScreen({ navigation }) {
         {/* NILAM Content */}
         <View
           className="p-5 mx-[28px] mt-[20px] rounded-lg bg-violet-light"
-          style={style.boxShadow}
+          style={globalStyle.boxShadow}
         >
           <View className="flex flex-col items-center justify-center">
             <InabText fontColor="#000">Your current NILAM count</InabText>
@@ -82,7 +85,7 @@ function HomeScreen({ navigation }) {
         {/* Borrow Book Content */}
         <View
           className="p-5 mx-[28px] mb-[90px] mt-[20px] rounded-lg bg-violet-light"
-          style={style.boxShadow}
+          style={globalStyle.boxShadow}
         >
           <InabText fontColor="#000">Current Borrow Book:</InabText>
           <View className="flex flex-row items-center w-full gap-5 mt-0">

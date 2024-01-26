@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { PropTypes } from 'prop-types';
 
-function InabText({ children, fontColor, size, weight, alignText, transform }) {
+function InabText({ children, fontColor, size, weight, alignText, transform, cssStyle }) {
   const styles = StyleSheet.create({
     text: {
       color: fontColor,
@@ -17,11 +17,9 @@ function InabText({ children, fontColor, size, weight, alignText, transform }) {
     },
   });
   return (
-    <View>
-      <Text className="leading-relaxed tracking-wide" style={styles.text}>
-        {children}
-      </Text>
-    </View>
+    <Text className="leading-relaxed tracking-wide" style={[styles.text, cssStyle]}>
+      {children}
+    </Text>
   );
 }
 
@@ -32,6 +30,9 @@ InabText.propTypes = {
   alignText: PropTypes.string,
   children: PropTypes.node.isRequired,
   transform: PropTypes.string,
+  cssStyle: PropTypes.shape({
+    root: PropTypes.string,
+  }),
 };
 
 InabText.defaultProps = {
@@ -40,6 +41,7 @@ InabText.defaultProps = {
   weight: '600',
   alignText: 'left',
   transform: 'none',
+  cssStyle: {},
 };
 
 export default InabText;

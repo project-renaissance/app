@@ -9,18 +9,29 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { SlideInDown, SlideInUp, SlideOutDown } from 'react-native-reanimated';
 import { State } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
+import InabLoadingIndicator from '../../components/InabLoadingIndicator';
 import InabText from '../../components/InabText';
 import COLORS from '../../assets/colors';
 
 function LoginScreen({ navigation }) {
   const [togglePassword, setTogglePassword] = useState(true);
+  const [toggleLoading, setToggleLoading] = useState(false);
 
   const onTogglePassword = () => {
     setTogglePassword(!togglePassword);
   };
 
+  const openLoading = () => {
+    setToggleLoading(true);
+
+    setTimeout(() => {
+      setToggleLoading(false);
+      navigation.navigate('Main', { screen: 'Home' });
+    }, 2000);
+  };
+
   return (
-    <SafeAreaView>
+    <SafeAreaView className="relative">
       <ImageBackground
         className="relative flex flex-col flex-wrap h-full bg-slate-600"
         source={require('../../../assets/bg_two.jpeg')}
@@ -76,9 +87,9 @@ function LoginScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={[COLORS.gradient_from, COLORS.gradient_from]}
+            colors={[COLORS.gradient_from, COLORS.gradient_to]}
           >
-            <TouchableOpacity onPress={() => navigation.navigate('Main', { screen: 'Home' })}>
+            <TouchableOpacity onPress={openLoading}>
               <InabText alignText="center" transform="uppercase" weight="700">
                 Enter
               </InabText>
@@ -93,6 +104,11 @@ function LoginScreen({ navigation }) {
           {/* </View> */}
         </Animated.View>
       </ImageBackground>
+
+      <InabLoadingIndicator
+        isVisible={toggleLoading}
+        onCloseLoading={() => setToggleLoading(false)}
+      />
     </SafeAreaView>
   );
 }

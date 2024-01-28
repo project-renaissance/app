@@ -25,7 +25,7 @@ function ForgotPasswordScreen({ navigation }) {
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           className="p-6 rounded-b-[20px] "
-          colors={[COLORS.gradient_from, COLORS.gradient_from]}
+          colors={[COLORS.gradient_from, COLORS.gradient_to]}
         >
           <View className="flex flex-col items-center justify-center w-full">
             <Image
@@ -55,7 +55,7 @@ function ForgotPasswordScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 my-4 rounded-lg"
-            colors={[COLORS.gradient_from, COLORS.gradient_from]}
+            colors={[COLORS.gradient_from, COLORS.gradient_to]}
           >
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>
               <InabText alignText="center" transform="uppercase" weight="700">

@@ -27,7 +27,7 @@ function HomeScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={[COLORS.gradient_from, COLORS.gradient_from]}
+            colors={[COLORS.gradient_from, COLORS.gradient_to]}
           >
             <TouchableOpacity onPress={() => navigation.navigate('ClassroomCode')}>
               <InabText alignText="center">Join Classroom</InabText>
@@ -77,7 +77,7 @@ function HomeScreen({ navigation }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             className="w-full py-3 mt-4 rounded-lg"
-            colors={[COLORS.gradient_from, COLORS.gradient_from]}
+            colors={[COLORS.gradient_from, COLORS.gradient_to]}
           >
             <InabText alignText="center">Add Nilam Record</InabText>
           </LinearGradient>

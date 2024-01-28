@@ -1,20 +1,38 @@
-import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import Modal from 'react-native-modal';
 import InabText from './InabText';
 import COLORS from '../assets/colors';
+import { deviceHeight, deviceWidth } from '../assets/dimensionModal';
 
-function InabLoadingIndicator({ label }) {
+function InabLoadingIndicator({ label, isVisible, onCloseLoading }) {
   return (
-    <View style={styles.loadingContainer}>
-      <ActivityIndicator size="large" color={COLORS.violet} />
-      <InabText fontColor={COLORS.white}>{{ label }}</InabText>
-    </View>
+    <Modal
+      animationType="slide"
+      isVisible={isVisible}
+      onBackdropPress={() => {
+        onCloseLoading(false);
+      }}
+      deviceHeight={deviceHeight}
+      deviceWidth={deviceWidth}
+      style={styles.loadingContainer}
+    >
+      <View style={styles.childrenLoading}>
+        <ActivityIndicator size="large" color={COLORS.white} />
+        <InabText fontColor={COLORS.white} cssStyle={styles.textLoading}>
+          {label}
+        </InabText>
+      </View>
+    </Modal>
   );
 }
 
 InabLoadingIndicator.propTypes = {
   label: PropTypes.string,
+  isVisible: PropTypes.bool.isRequired,
+  onCloseLoading: PropTypes.func.isRequired,
 };
 
 InabLoadingIndicator.defaultProps = {
@@ -23,13 +41,25 @@ InabLoadingIndicator.defaultProps = {
 
 const styles = StyleSheet.create({
   loadingContainer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    margin: 'auto',
-    backgroundColor: COLORS.backDropBlack,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  childrenLoading: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+    borderRadius: 24,
+    backgroundColor: COLORS.violet,
+    width: '50%',
+  },
+
+  textLoading: {
+    marginTop: 16,
   },
 });
 

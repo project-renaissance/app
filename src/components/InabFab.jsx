@@ -76,7 +76,7 @@ function InabFab({ topListFab, sideListFab, centerFab }) {
         <Animated.View style={[rotateStyle, centerLabelStyle]}>
           <Ionicons color="white" size={30} name={centerFab.icon} />
           <InabText color="white" weight="700" transform="uppercase">
-            {centerFab.label}
+            {centerFab.label || ''}
           </InabText>
         </Animated.View>
       </TouchableOpacity>

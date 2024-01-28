@@ -20,7 +20,7 @@ function ClassroomList({ navigation }) {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         className="p-6 rounded-b-[20px] "
-        colors={[COLORS.gradient_from, COLORS.gradient_from]}
+        colors={[COLORS.gradient_from, COLORS.gradient_to]}
       >
         <View className="flex flex-col items-center justify-center w-full">
           <InabText size={20} weight="700" fontColor="white">

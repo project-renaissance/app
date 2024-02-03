@@ -17,6 +17,7 @@ function InabFab({ topListFab, sideListFab, centerFab }) {
   const centerValue = useSharedValue(0);
   const [isToggleMenu, setIsToggleMenu] = useState(false);
 
+  // toggle menu top and side
   const toggleMenu = () => {
     const toValue = centerValue.value === 0 ? 45 : 0;
 
@@ -32,6 +33,7 @@ function InabFab({ topListFab, sideListFab, centerFab }) {
     transform: centerFab.isRotate ? [{ rotate: `${centerValue.value}deg` }] : [],
   }));
 
+  // center button style
   const centerLabelStyle = {
     display: 'flex',
     flexDirection: 'row',
@@ -67,7 +69,7 @@ function InabFab({ topListFab, sideListFab, centerFab }) {
 
       {/* Center FAB */}
       <TouchableOpacity
-        onPress={toggleMenu}
+        onPress={centerFab.onPress ? centerFab.onPress : toggleMenu}
         style={globalStyle.boxShadow}
         className={`rounded-full bg-violet h-[50px] ${
           centerFab.label ? 'px-5' : 'w-[50px]'
@@ -104,6 +106,7 @@ InabFab.propTypes = {
     icon: PropTypes.string,
     route: PropTypes.string,
     isRotate: PropTypes.bool,
+    onPress: PropTypes.func,
   }).isRequired,
 };
 

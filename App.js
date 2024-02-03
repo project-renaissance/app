@@ -1,12 +1,12 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/extensions */
 /* eslint-disable global-require */
-import 'react-native-gesture-handler';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import RootNavigation from './src/navigations/RootNavigation';
 // import { store } from './src/store';
 
@@ -29,9 +29,11 @@ function App() {
 
   return (
     // <Provider store={store}>
-    <SafeAreaProvider onLayout={onLayoutRootView}>
-      <RootNavigation />
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider onLayout={onLayoutRootView}>
+        <RootNavigation />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
     // </Provider>
   );
 }

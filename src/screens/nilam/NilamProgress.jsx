@@ -38,18 +38,9 @@ function NilamProgress({ navigation }) {
 
   const [index, setIndex] = useState(0);
   const [routes] = useState([
-    {
-      key: 'first',
-      title: 'Approved',
-    },
-    {
-      key: 'second',
-      title: 'Rejected',
-    },
-    {
-      key: 'third',
-      title: 'All',
-    },
+    { key: 'first', title: 'Approved' },
+    { key: 'second', title: 'Rejected' },
+    { key: 'third', title: 'All' },
   ]);
 
   const handleIndexChange = (newIndex) => {

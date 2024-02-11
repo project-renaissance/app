@@ -5,18 +5,18 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import Modal from 'react-native-modal';
 import InabText from './InabText';
 import COLORS from '../assets/colors';
-import { deviceHeight, deviceWidth } from '../assets/dimensionModal';
+import dimentsionModal from '../assets/dimensionModal';
 
 function InabLoadingIndicator({ label, isVisible, onCloseLoading }) {
   return (
     <Modal
-      animationType="slide"
+      animationType="fade"
       isVisible={isVisible}
       onBackdropPress={() => {
         onCloseLoading(false);
       }}
-      deviceHeight={deviceHeight}
-      deviceWidth={deviceWidth}
+      deviceHeight={dimentsionModal.deviceHeight}
+      deviceWidth={dimentsionModal.deviceWidth}
       style={styles.loadingContainer}
     >
       <View style={styles.childrenLoading}>

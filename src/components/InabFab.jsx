@@ -64,6 +64,8 @@ function InabFab({ topListFab, sideListFab, centerFab }) {
           icon={fab.icon}
           isToggleMenu={isToggleMenu}
           key={fab.id}
+          onPress={fab.onpress}
+          route={fab.route}
         />
       ))}
 

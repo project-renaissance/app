@@ -7,6 +7,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { PortalHost, PortalProvider } from '@gorhom/portal';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import RootNavigation from './src/navigations/RootNavigation';
 // import { store } from './src/store';
 
@@ -30,9 +32,14 @@ function App() {
   return (
     // <Provider store={store}>
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider onLayout={onLayoutRootView}>
-        <RootNavigation />
-      </SafeAreaProvider>
+      <BottomSheetModalProvider>
+        <PortalProvider>
+          <SafeAreaProvider onLayout={onLayoutRootView}>
+            <PortalHost name="bottomSheet" />
+            <RootNavigation />
+          </SafeAreaProvider>
+        </PortalProvider>
+      </BottomSheetModalProvider>
     </GestureHandlerRootView>
     // </Provider>
   );

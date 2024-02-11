@@ -10,7 +10,7 @@ import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import globalStyle from '../globalStyle';
 
-function AxisXFab({ from, to, icon, label, isToggleMenu }) {
+function AxisXFab({ from, to, icon, label, route, onPress, isToggleMenu }) {
   const axisXValue = useSharedValue(from);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function AxisXFab({ from, to, icon, label, isToggleMenu }) {
       style={[globalStyle.boxShadow, translateXStyle]}
       className="rounded-full bg-violet h-[50px] w-[50px] flex items-center justify-center absolute bottom-[100px] right-[20px]"
     >
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPress}>
         <Ionicons color="white" size={20} name={icon} />
       </TouchableOpacity>
     </Animated.View>
@@ -42,11 +42,15 @@ AxisXFab.propTypes = {
   to: PropTypes.number.isRequired,
   icon: PropTypes.string.isRequired,
   label: PropTypes.string,
+  onPress: PropTypes.func,
+  route: PropTypes.string,
   isToggleMenu: PropTypes.bool.isRequired,
 };
 
 AxisXFab.defaultProps = {
   label: '',
+  onPress: () => {},
+  route: '',
 };
 
 export default AxisXFab;

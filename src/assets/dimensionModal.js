@@ -1,9 +1,11 @@
-const { Dimensions, Platform } = require('react-native');
+import { Dimensions, Platform } from 'react-native';
+import ExtraDimensions from 'react-native-extra-dimensions-android';
 
 const deviceWidth = Dimensions.get('window').width;
-const deviceHeight =
-  Platform.OS === 'ios'
-    ? Dimensions.get('window').height
-    : require('react-native-extra-dimensions-android').get('REAL_WINDOW_HEIGHT');
+const deviceHeight = Dimensions.get('window').height;
+// Platform.OS === 'ios'
+//   ? Dimensions.get('window').height
+//   : ExtraDimensions.getRealWindowHeight();
 
-module.exports = { deviceHeight, deviceWidth };
+// console.log(Platform.OS, Dimensions.get('window').height)
+export default { deviceHeight, deviceWidth };

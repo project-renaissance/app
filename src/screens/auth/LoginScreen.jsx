@@ -27,7 +27,7 @@ function LoginScreen({ navigation }) {
     setTimeout(() => {
       setToggleLoading(false);
       navigation.navigate('Main', { screen: 'Home' });
-    }, 500);
+    }, 1500);
   };
 
   return (

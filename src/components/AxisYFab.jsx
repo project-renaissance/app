@@ -10,7 +10,7 @@ import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import globalStyle from '../globalStyle';
 
-function AxisYFab({ from, to, icon, label, isToggleMenu }) {
+function AxisYFab({ from, to, icon, label, route, onPress, isToggleMenu }) {
   const axisYValue = useSharedValue(from);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function AxisYFab({ from, to, icon, label, isToggleMenu }) {
       style={[globalStyle.boxShadow, translateYStyle]}
       className="rounded-full bg-violet h-[50px] w-[50px] flex items-center justify-center absolute bottom-[100px] right-[20px]"
     >
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPress}>
         <Ionicons color="white" size={20} name={icon} />
       </TouchableOpacity>
     </Animated.View>
@@ -42,11 +42,15 @@ AxisYFab.propTypes = {
   to: PropTypes.number.isRequired,
   icon: PropTypes.string.isRequired,
   label: PropTypes.string,
+  onPress: PropTypes.func,
+  route: PropTypes.string,
   isToggleMenu: PropTypes.bool.isRequired,
 };
 
 AxisYFab.defaultProps = {
   label: '',
+  onPress: () => {},
+  route: '',
 };
 
 export default AxisYFab;

@@ -8,7 +8,6 @@ import HomeScreen from '../screens/HomeScreen';
 import NilamProgress from '../screens/nilam/NilamProgress';
 import BookList from '../screens/library/BookList';
 import Profile from '../screens/profile/Profile';
-import ClassroomNavigation from './ClassroomNavigation';
 import ClassroomList from '../screens/classroom/ClassroomList';
 import COLORS from '../assets/colors';
 
